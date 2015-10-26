@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<meta name="author" content="Alan Tai">
+<meta name="company" content="Bay Technology Inc.">
+
+<title>{{ title | safe }}</title>
+</head>
+<html>
+    <body>
+        <p>{{ greeting | safe }}</p>
+    </body>
+</html>
+{% endautoescape %}
