@@ -19,6 +19,7 @@ class MainPage(webapp2.RequestHandler):
             encoded_args = urllib.urlencode(query_args)
             url = 'http://52.34.94.166:3000/get_ip_geo'
             result = json.loads(urllib2.urlopen(url, encoded_args).read())
+            print result
             lat_lng = result['geo']['ll']
             
             # store data
