@@ -10,6 +10,23 @@
 <html>
     <body>
         <p>{{ greeting | safe }}</p>
+        
+        <hr/>
+        <!-- ip logs -->
+        <h3>Visitors' IPs</h3>
+        {% if ip_logs %}
+            {% for ip_log in ip_logs %}
+                <p>
+                IP: <span>{{ip_log.ip_address | safe}}</span>
+                <br/>
+                Lat: <span>{{ip_log.lat | safe}}</span> ; Lng: <span>{{ip_log.lng | safe}}</span>
+                <br/>
+                Time: <span>{{ip_log.access_time | safe}}</span>
+                </p>
+            {% endfor %}
+        {% else %}
+            <p>No Logs</p>
+        {% endif %}
     </body>
 </html>
 {% endautoescape %}
